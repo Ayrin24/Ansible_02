@@ -46,6 +46,39 @@ playbook/
 
 
 ````
+Структура playbook
+Play 1: Install Clickhouse
+Скачивает clickhouse-common-static_<version>_amd64.deb отдельно
+(у этого пакета суффикс amd64, а не all).
+
+Скачивает clickhouse-client_<version>_all.deb и
+clickhouse-server_<version>_all.deb в цикле.
+
+Устанавливает clickhouse-common-static первым (от него зависят
+остальные пакеты).
+
+Устанавливает clickhouse-client и clickhouse-server.
+
+Через meta: flush_handlers дожидается перезапуска сервиса.
+
+Создаёт базу данных logs.
+
+Play 2: Install and configure Vector
+Создаёт системного пользователя и группу vector.
+
+Скачивает vector-<version>-<arch>.tar.gz в /tmp/vector-download.
+
+Распаковывает архив в /opt/vector (со --strip-components=2).
+
+Создаёт симлинк /usr/local/bin/vector.
+
+Деплоит конфиг из templates/vector.yaml.j2 в /etc/vector/vector.yaml.
+
+Создаёт systemd-юнит /etc/systemd/system/vector.service.
+
+Включает и запускает сервис.
+
+Результаты:
 
 Запустите ansible-lint site.yml и исправьте ошибки, если они есть.
 
