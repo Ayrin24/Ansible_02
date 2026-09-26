@@ -1,0 +1,15 @@
+# Виртуальное окружение Ansible
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Ansible
+*.retry
+*.log
+
+# Временные файлы
+*.tmp
+*.swp

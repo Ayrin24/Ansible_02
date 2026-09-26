@@ -1,0 +1,9 @@
+---
+clickhouse_version: "22.3.3.44"
+clickhouse_packages:
+  - clickhouse-client
+  - clickhouse-server
+  - clickhouse-common-static
+
+clickhouse_deb_base_url: "https://packages.clickhouse.com/deb/pool/main/c"
+clickhouse_deb_arch: "amd64"

@@ -1,0 +1,22 @@
+# Vector configuration — deployed by Ansible
+# Template: templates/vector.yaml.j2
+
+data_dir: {{ vector_data_dir }}
+
+sources:
+  internal_metrics:
+    type: internal_metrics
+
+  dummy_logs:
+    type: demo_logs
+    format: json
+    interval: 1
+
+sinks:
+  console:
+    type: console
+    inputs:
+      - internal_metrics
+      - dummy_logs
+    encoding:
+      codec: json

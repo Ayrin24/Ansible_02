@@ -1,0 +1,9 @@
+---
+vector_version: "0.42.0"
+vector_arch: "x86_64-unknown-linux-gnu"
+vector_download_dir: "/tmp/vector-download"
+vector_install_dir: "/opt/vector"
+vector_config_dir: "/etc/vector"
+vector_data_dir: "/var/lib/vector"
+vector_user: "vector"
+vector_group: "vector"

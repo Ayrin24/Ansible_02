@@ -1,0 +1,11 @@
+---
+clickhouse:
+  hosts:
+    clickhouse-01:
+      ansible_host: 51.250.17.235
+      ansible_user: mulenkois
+vector:
+  hosts:
+    vector-01:
+      ansible_host: 158.160.16.221
+      ansible_user: mulenkois
